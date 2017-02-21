@@ -1,0 +1,55 @@
+<div class="testboxUpload login-panel panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title">complete Details</h2>
+					</div>
+    <!-- FORM -->
+    <!-- pass in the variable if our form is valid or invalid -->
+  <div class="panel-body">
+    <form name="guestForm"  method="post" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
+        <!-- First NAME -->
+        <div class="form-group">
+          	 <label id="icon" for="firstName"><i class="icon-user"></i></label>
+            <input type="text" name="firstName"  ng-model="user.firstName"  placeholder="Enter First Name" required><br>
+            <small ng-show="guestForm.firstName.$invalid && !guestForm.firstName.$pristine" class="text-danger">First Name is required.</small>
+        </div>
+        
+             <!-- Last NAME -->
+        <div class="form-group">
+          	 <label id="icon" for="lastName"><i class="icon-user"></i></label>
+            <input type="text" name="lastName"  ng-model="user.lastName"  placeholder="Enter last Name" required><br>
+            <small ng-show="guestForm.lastName.$invalid && !guestForm.lastName.$pristine" class="text-danger">Last Name is required.</small>
+        </div>
+        
+        <!-- Mobile -->
+       <div class="form-group">
+           <label id="icon" for="mobile"><i class="fa fa-mobile"></i></label>
+           <input type="number" ng-minlength="10" ng-maxlength="10"  id="mobile" name="mobile" placeholder="Enter Mobile" ng-model="user.mobile" required><br>
+           <small class="text-danger" ng-show="guestForm.mobile.$error.required && !guestForm.mobile.$pristine">mobile number is required</small>
+           <small class="text-danger" ng-show="guestForm.mobile.$error.maxlength && !guestForm.mobile.$pristine">mobile number should be 10 digits</small>
+           <small class="text-danger" ng-show="guestForm.mobile.$error.minlength && !guestForm.mobile.$pristine">mobile number should be 10 digits</small>
+          <!--  <small  ng-show="guestForm.mobile.$invalid && !guestForm.mobile.$pristine" class="text-danger">Enter a valid mobile.</small> -->
+       </div>
+
+        <!-- EMAIL -->
+        <div class="form-group">
+           <label id="icon" for="email"><i class="icon-envelope "></i></label>
+            <input type="email" name="email"  ng-model="user.email" placeholder="Enter Email"  required><br>
+            <small ng-show="guestForm.email.$error.email && !guestForm.email.$pristine" class="text-danger">Enter a valid email.</small>
+            <small ng-show="guestForm.email.$error.required && !guestForm.email.$pristine" class="text-danger">Email Required</small>
+        </div>
+        
+        <!-- Address -->
+        <div class="form-group">
+            <div class="col-sm-10">
+	            <textarea name="address" ng-minlength="10" class="form-control" rows="3" ng-model="user.address" placeholder="Enter address"  required></textarea>
+	            <small  ng-show="guestForm.address.$error.required && !guestForm.address.$pristine" class="text-danger">Address Required</small>
+	             <small class="text-danger" ng-show="guestForm.address.$error.minlength && !guestForm.address.$pristine">Address must be 10 characters long</small>
+	            <br/>
+            </div>
+        </div>
+        <br>
+       <center><a type="submit" href="#uploadImage" class="btn btn-warning" ng-disabled="guestForm.$invalid">NEXT<i style="margin-left: 2px;" class="fa fa-arrow-circle-right"></i></a></center>
+        
+    </form>
+</div>

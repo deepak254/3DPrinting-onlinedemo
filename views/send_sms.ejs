@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Template Title -->
+    <title>3D App</title>
+		<link href="css/footer/footer-distributed-with-address-and-phones.css" rel="stylesheet">
+	
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+
+    <!-- Bootstrap 3.2.0 stylesheet -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icon stylesheet -->
+    <link href="css/main/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel stylesheet -->
+    <link href="css/main/owl.carousel.css" rel="stylesheet">
+    
+    <!-- Pretty Photo stylesheet -->
+    <link href="css/main/prettyPhoto.css" rel="stylesheet">
+
+    <!-- Custom stylesheet -->
+    <link href="css/main/style.css" rel="stylesheet">
+     <link href="css/stylesheet.css" rel="stylesheet">
+    
+    <link href="css/main/white.css" rel="stylesheet">
+
+
+    <!-- Custom Responsive stylesheet -->
+    <link href="css/main/responsive.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+ <link rel='stylesheet' href="css/loading-bar/loading-bar.min.css" type='text/css' media='all' />
+ <script type='text/javascript' src="js/loading-bar.min.js"></script>
+ <!-- <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+ <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script> -->
+<body>
+<% include ./resources/headerAndMenu %>
+ <br><br>
+ 
+ <center>
+ 
+ <% if ( expressFlash.length > 0 ) { %>
+			<section class="alert alert-success" style="margin-top:-50px; width:500px;">
+				<span area-hidden="true"><i class="fa fa-thumbs-o-up"></i></span>
+				<span class="list-group-item-success"><%= expressFlash %></span>
+			</section>
+			<% } %> 
+			<% if(error.length > 0 ) { %>
+			<section class="alert alert-danger" style="margin-top:-50px; width:500px;">
+			 <span area-hidden="true"><i class="fa fa-exclamation-triangle"></i></span>
+			<span class="list-group-item-danger"> <%=error%></span><br>
+			</section>
+			<% } %>
+ 
+ </center>
+ 
+<form action="/sendSMS" name="smsForm"  method="post" novalidate>
+ <!-- Mobile -->
+       <div class="form-group">
+           <label id="icon" for="mobile"><i class="fa fa-mobile"></i></label>
+           <input type="number" ng-minlength="10" ng-maxlength="10"  id="mobile" name="mobile" placeholder="Enter Mobile" ng-model="user.mobile" required><br>
+           <small class="text-danger" ng-show="smsForm.mobile.$error.required && !smsForm.mobile.$pristine">mobile number is required</small>
+           <small class="text-danger" ng-show="smsForm.mobile.$error.maxlength && !smsForm.mobile.$pristine">mobile number should be 10 digits</small>
+           <small class="text-danger" ng-show="smsForm.mobile.$error.minlength && !smsForm.mobile.$pristine">mobile number should be 10 digits</small>
+          <!--  <small  ng-show="smsForm.mobile.$invalid && !smsForm.mobile.$pristine" class="text-danger">Enter a valid mobile.</small> -->
+       </div>
+
+
+<center><button type="submit" class="btn btn-warning" ng-disabled="gsmsForm.$invalid">SEND SMS<i style="margin-left: 2px;" class="fa fa-arrow-circle-right"></i></button></center
+
+</form>
+
+
+
+
+<% include ./resources/footer %>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<div  class="testboxUpload login-panel panel panel-primary" ng-controller="editUserController">
+
+					<div class="panel-heading">
+						<h2 class="panel-title">Update Basic Details </h2>
+						
+					</div>
+    <!-- FORM -->
+    <!-- pass in the variable if our form is valid or invalid -->
+  <div class="panel-body">
+  
+  <div ng-show="message.length>0" class="alert alert-success" style="width:300px;height:50px;"><small>{{message}}</small></div>
+    <form name="editForm" method="post" ng-submit="processForm()" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+		 <!-- First NAME -->
+        <div class="form-group">
+          	 <label id="icon" for="firstName"><i class="icon-user"></i></label>
+            <input type="text" name="firstName"  ng-model="currentUser.firstName"  placeholder="Enter First Name" required><br>
+            <small ng-show="editForm.firstName.$invalid && !editForm.firstName.$pristine" class="text-danger">First Name is required.</small>
+        </div>
+        
+             <!-- Last NAME -->
+        <div class="form-group">
+          	 <label id="icon" for="lastName"><i class="icon-user"></i></label>
+            <input type="text" name="lastName"  ng-model="currentUser.lastName"  placeholder="Enter last Name" required><br>
+            <small ng-show="editForm.lastName.$invalid && !editForm.lastName.$pristine" class="text-danger">Last Name is required.</small>
+        </div>
+
+   <!--   <!--    <!-- password 
+        <div class="form-group">
+            <label id="icon" for="name"><i class="icon-unlock-alt "></i></label>
+            <input type="password" name="password"  ng-model="currentUser.password" placeholder="Enter Password"  ng-minlength="5" ng-maxlength="10" required><br>
+            <small ng-show="editForm.password.$error.required && !editForm.password.$pristine" class="text-danger">Password is required.</small>
+             <small ng-show="editForm.password.$error.minlength && !editForm.password.$pristine" class="text-danger">Password should be min 5 characters.</small>
+              <small ng-show="editForm.password.$error.maxlength && !editForm.password.$pristine" class="text-danger">Password can only be 10 characters long.</small>
+        </div> --> 
+        
+        <!-- EMAIL -->
+        <div class="form-group">
+           
+           <label id="icon" for="name"><i class="icon-envelope "></i></label>
+           
+            <input type="email" name="email"  ng-model="currentUser.email" placeholder="Enter Email"  required><br>
+            <small ng-show="editForm.email.$error.email && !editForm.email.$pristine" class="text-danger">Enter a valid email.</small>
+            <small ng-show="editForm.email.$error.required && !editForm.email.$pristine" class="text-danger">Email Required</small>
+        </div>
+        
+       
+        
+         <!-- Mobile -->
+        <div class="form-group">
+            <label id="icon" for="name"><i class="fa fa-mobile"></i></label>
+             <input type="number"  ng-minlength="10" ng-maxlength="10"  id="mobile" name="mobile" placeholder="Enter Mobile" ng-model="currentUser.mobile" required><br>
+            <small class="text-danger" ng-show="editForm.mobile.$error.required && !editForm.mobile.$pristine">mobile number is required</small>
+            <small class="text-danger" ng-show="editForm.mobile.$error.maxlength && !editForm.mobile.$pristine">mobile number should be 10 digits</small>
+            <small class="text-danger" ng-show="editForm.mobile.$error.minlength && !editForm.mobile.$pristine">mobile number should be 10 digits</small>
+           <!--  <small  ng-show="editForm.mobile.$invalid && !editForm.mobile.$pristine" class="text-danger">Enter a valid mobile.</small> -->
+        </div>
+        
+        
+       
+     
+        
+       
+        
+        <!-- SUBMIT BUTTON -->
+       
+        <br>
+       <center><button type="submit" class="btn btn-warning" ng-disabled="editForm.$invalid">Update Details<i style="margin-left: 2px;" class="fa fa-arrow-circle-right"></i></button></center>
+        
+    </form>
+</div>
+</div>

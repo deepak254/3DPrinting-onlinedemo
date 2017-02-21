@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginHome">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Template Title -->
+    <title>Zgraphy.com</title>
+	
+	
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+
+    <!-- Bootstrap 3.2.0 stylesheet -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icon stylesheet -->
+    <link href="css/main/font-awesome.min.css" rel="stylesheet">
+
+
+
+    <!-- Custom stylesheet -->
+    <link href="css/main/style.css" rel="stylesheet">
+     <link href="css/stylesheet.css" rel="stylesheet">
+    
+    <!-- <link href="css/main/white.css" rel="stylesheet"> -->
+
+
+    <!-- Custom Responsive stylesheet -->
+    <link href="css/main/responsive.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+	<link href="css/footer/footer-distributed-with-address-and-phones.css" rel="stylesheet">
+ <!-- <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+ <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script> -->
+ </head>
+  <body>
+  
+   <!-- ====== Menu Section ====== -->
+    <section id="menu">
+      <div class="navigation">
+        <div id="main-nav" class="navbar navbar-default" role="navigation">
+          <div class="container">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Zgraphy.com <i class="fa fa-trademark"></i></a>
+            </div> <!-- end .navbar-header -->
+
+            <div class="navbar-collapse collapse">
+              <ul id="ulnav" class="nav navbar-nav navbar-right">
+                <li><a>Kindly Login Before Use</a></li>
+              </ul>
+            </div><!-- end .navbar-collapse -->
+
+          </div> <!-- end .container -->
+        </div> <!-- end #main-nav -->
+      </div> <!-- end .navigation -->
+    </section>
+
+
+	<br>
+	<br>
+	
+	<div class="container" style="background-image: /images/form.jpg;">
+		<center><h1>Welcome To Zgraphy</h1></center>
+		<div class="row">
+
+			<div class="col-md-6 col-md-offset-3">
+				<div class="login-panel panel panel-default">
+
+					<div class="panel-heading">
+						<h2 class="panel-title">Please LogIn</h2>
+					</div>
+					<div class="panel-body">
+						<% if ( expressFlash.length > 0 ) { %>
+						<section class="alert alert-success">
+							<span area-hidden="true"><i class="fa fa-thumbs-o-up"></i></span>
+							<span class="list-group-item-success"><%= expressFlash %></span>
+						</section>
+						<% } %> 
+					
+						<% if ( error.length > 0 ) { %>
+						<section class=" wrapper alert alert-danger">
+							 <span area-hidden="true"><i class="fa fa-exclamation-triangle"></i></span>
+							<span class="list-group-item-danger"><%= error %></span>
+						</section>
+						<% } %>
+						<form role="form" name="adminForm" action="/doAdminLogin" method="get">
+
+							<!-- NAME -->
+							<div class="form-group">
+								<label id="icon" for="username"><i class="icon-user"></i></label>
+								<input type="text" name="username" ng-model="Email"
+									placeholder="Enter admin Email" required> <small
+									ng-show="adminForm.username.$invalid && !adminForm.username.$pristine"
+									class="text-danger">Admin email is required.</small>
+							</div>
+
+							<!-- USERNAME -->
+							<div class="form-group">
+								<label id="icon" for="name"><i class="icon-unlock-alt "></i></label>
+								<input type="password" name="password" ng-model="password"
+									placeholder="Enter Password" required> <small
+									ng-show="adminForm.password.$invalid && !adminForm.password.$pristine"
+									class="text-danger">Admin Password is required.</small>
+							</div>
+
+							<!-- Change this to a button or input when using this as a form -->
+							<button class="btn btn-lg btn-warning" type="submit"
+								ng-disabled="adminForm.$invalid" style="margin-left: 19px;">
+								Login <i style="margin-left: 2px;" class="icon-unlock"></i>
+							</button>
+
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+<!--  <% include ./resources/footer %>  -->
+   
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+   
+    
+    <!-- Modernizr js -->
+    <script src="js/main/modernizr-latest.js"></script>
+
+<script>
+angular.module('loginHome', []).controller('adminController', function($scope) {
+	
+	});
+
+</script>
+
+    <!-- Bootstrap 3.2.0 js -->
+</body>
+</html>

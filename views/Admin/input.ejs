@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Template Title -->
+    <title>3D App</title>
+		<link href="css/footer/footer-distributed-with-address-and-phones.css" rel="stylesheet">
+	
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+
+    <!-- Bootstrap 3.2.0 stylesheet -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icon stylesheet -->
+    <link href="css/main/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel stylesheet -->
+    <link href="css/main/owl.carousel.css" rel="stylesheet">
+    
+    <!-- Pretty Photo stylesheet -->
+    <link href="css/main/prettyPhoto.css" rel="stylesheet">
+
+    <!-- Custom stylesheet -->
+    <link href="css/main/style.css" rel="stylesheet">
+     <link href="css/stylesheet.css" rel="stylesheet">
+    
+    <link href="css/main/white.css" rel="stylesheet">
+
+
+    <!-- Custom Responsive stylesheet -->
+    <link href="css/main/responsive.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+ <link rel='stylesheet' href="css/loading-bar/loading-bar.min.css" type='text/css' media='all' />
+ <script type='text/javascript' src="js/loading-bar.min.js"></script>
+ <!-- <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+ <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script> -->
+<body>
+<% include ../resources/headerAndMenu %>
+
+<div class="container-fluid" style="margin-top: 2em;" ng-app="">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="login-panel panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Insert Product Details</h2>
+                </div>
+                <div class="panel-body">
+                    <form name="prodForm" action="/saveProdDetails" method="post" novalidate enctype ="multipart/form-data">
+                    
+                        <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+                        <div class="col-md-6">
+                            <table class="col-md-12">
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Product Name</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="text" ng-model="objProd.prodName" name="prodName" style="width: 80%;" class="form-control" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Product Color</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="text" ng-model="objProd.prodColor" name="prodColor" style="width: 40%;" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Price</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="number" ng-model="objProd.prodPrice" name="prodPrice" style="width: 40%;" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Discount %</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="number" ng-model="objProd.prodDiscount" name="prodDiscount" style="width: 40%;" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Image</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="file" ng-model="objProd.prodImage" name="prodImage" style="width: 80%;" class="form-control">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="col-md-12">
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Product Category</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="text" ng-model="objProd.prodCategory" name="prodCategory" style="width: 80%;" class="form-control" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Product Size</lable>
+                                    </td>
+                                    <td class="col-md-8">
+	                                    <select name="objProd.prodSize" style="width:40%;">
+		                                    <option value="Larger">Larger</option>
+		                                    <option value="Medium">Medium</option>
+		                                    <option value="Small">Small</option>
+		                                  </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Avalilability</lable>
+                                    </td>
+                                    <td class="col-md-8">
+	                                    <select name="objProd.prodAvailable" style="width:40%;">
+		                                    <option value="Y">Available</option>
+		                                    <option value="N">Not Available</option>
+	                                  </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Unit in Stock</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="number" ng-model="objProd.prodUnits" name="prodName" style="width: 40%;" class="form-control">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4 text-right">
+                                        <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Weight</lable>
+                                    </td>
+                                    <td class="col-md-8">
+                                        <input type="number" ng-model="objProd.prodWeight" name="prodWeight" style="width: 40%;" class="form-control">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-12">
+	                        <table class="col-md-12">
+	                            <tr class="col-md-6">
+	                                <td class="col-md-4 text-right">
+	                                    <lable style="font-weight: 700; line-height: 1.3; display: inline-block; color: #4d4d4d;">Product Description</lable>
+	                                </td>
+	                                <td class="col-md-8">
+	                                    <textarea ng-model="objProd.prodDesc" name="prodDesc" class="form-control" rows="2"></textarea>
+	                                </td>
+	                            </tr>
+	                            <tr>
+	                            <td colspan="2">&nbsp;</td>
+	                            </tr>
+	                        </table>
+	                    </div>
+                        <input type="hidden" name="hdnProd" value="{{objProd}}"/>
+                        <div class="form-group">
+                            <br/>
+                            <center><button type="submit" class="btn btn-warning" ng-disabled="userForm.$invalid">Submit</button></center>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../resources/footer %>
+
+</body>
+</html>

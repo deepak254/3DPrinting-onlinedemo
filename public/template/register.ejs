@@ -1,0 +1,66 @@
+<div  class="testbox login-panel panel panel-primary">
+
+					<div class="panel-heading">
+						<h2 class="panel-title">Please Register</h2>
+					</div>
+    <!-- FORM -->
+    <!-- pass in the variable if our form is valid or invalid -->
+  <div class="panel-body">
+    <form name="userForm"  action="/saveUser"  method="post" novalidate> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+
+        <div class="form-group">
+          	 <label id="icon" for="firstName"><i class="icon-user"></i></label>
+            <input type="text" name="firstName"  ng-model="user.firstName"  placeholder="Enter First Name" required><br>
+            <small ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" class="text-danger">First Name is required.</small>
+        </div>
+        
+             <!-- Last NAME -->
+        <div class="form-group">
+          	 <label id="icon" for="lastName"><i class="icon-user"></i></label>
+            <input type="text" name="lastName"  ng-model="user.lastName"  placeholder="Enter last Name" required><br>
+            <small ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" class="text-danger">Last Name is required.</small>
+        </div>
+
+     <!-- password -->
+        <div class="form-group">
+            <label id="icon" for="name"><i class="icon-unlock-alt "></i></label>
+            <input type="password" name="password"  ng-model="user.password" placeholder="Enter Password"  ng-minlength="5" ng-maxlength="10" required><br>
+            <small ng-show="userForm.password.$error.required && !userForm.password.$pristine" class="text-danger">Password is required.</small>
+             <small ng-show="userForm.password.$error.minlength && !userForm.password.$pristine" class="text-danger">Password should be min 5 characters.</small>
+              <small ng-show="userForm.password.$error.maxlength && !userForm.password.$pristine" class="text-danger">Password can only be 10 characters long.</small>
+        </div> 
+        
+        <!-- EMAIL -->
+        <div class="form-group">
+           
+           <label id="icon" for="name"><i class="icon-envelope "></i></label>
+           
+            <input type="email" name="email"  ng-model="user.email" placeholder="Enter Email"  required><br>
+            <small ng-show="userForm.email.$error.email && !userForm.email.$pristine" class="text-danger">Enter a valid email.</small>
+            <small ng-show="userForm.email.$error.required && !userForm.email.$pristine" class="text-danger">Email Required</small>
+        </div>
+        
+       
+        
+         <!-- Mobile -->
+        <div class="form-group">
+            <label id="icon" for="name"><i class="fa fa-mobile"></i></label>
+             <input type="number"  ng-minlength="10" ng-maxlength="10"  id="mobile" name="mobile" placeholder="Enter Mobile" ng-model="user.mobile" required><br>
+            <small class="text-danger" ng-show="userForm.mobile.$error.required && !userForm.mobile.$pristine">mobile number is required</small>
+            <small class="text-danger" ng-show="userForm.mobile.$error.maxlength && !userForm.mobile.$pristine">mobile number should be 10 digits</small>
+            <small class="text-danger" ng-show="userForm.mobile.$error.minlength && !userForm.mobile.$pristine">mobile number should be 10 digits</small>
+           <!--  <small  ng-show="userForm.mobile.$invalid && !userForm.mobile.$pristine" class="text-danger">Enter a valid mobile.</small> -->
+        </div>
+ <!-- SUBMIT BUTTON -->
+        <p><small>By clicking Register, you agree on our <a>terms and condition</a>.</small></p>
+        <br>
+       <center><button type="submit" class="btn btn-warning" ng-disabled="userForm.$invalid">Register <i style="margin-left: 2px;" class="fa fa-arrow-circle-right"></i></button></center>
+        
+    </form>
+</div>
+</div>
+
+<script src="/js/validationApp.js"></script>
+
+
+

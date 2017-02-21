@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="home">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Template Title -->
+    <title>Zgraphy.com</title>
+	
+	
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+
+    <!-- Bootstrap 3.2.0 stylesheet -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icon stylesheet -->
+    <link href="css/main/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel stylesheet -->
+    <link href="css/main/owl.carousel.css" rel="stylesheet">
+    
+    <!-- Pretty Photo stylesheet -->
+    <link href="css/main/prettyPhoto.css" rel="stylesheet">
+
+    <!-- Custom stylesheet -->
+    <link href="css/main/style.css" rel="stylesheet">
+     <link href="css/stylesheet.css" rel="stylesheet">
+    
+    <link href="css/main/white.css" rel="stylesheet">
+
+
+    <!-- Custom Responsive stylesheet -->
+    <link href="css/main/responsive.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+ <link rel='stylesheet' href="css/loading-bar/loading-bar.min.css" type='text/css' media='all' />
+ <script type='text/javascript' src="js/loading-bar.min.js"></script>
+ <!-- <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+ <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script> -->
+ </head>
+  <body>
+  
+  
+   <!-- ====== Menu Section ====== -->
+   <header> <% include ./resources/headerAndMenu %> </header>
+  
+    <!-- ====== Header Section ====== -->
+    <header id="top">
+      <div class="bg-color">
+        <div class="top section-padding">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-sm-7 col-md-7">
+              
+              	<% if ( expressFlash.length > 0 ) { %>
+			<section class="alert alert-success" >
+				<span area-hidden="true"><i class="fa fa-thumbs-o-up"></i></span>
+				<span class="list-group-item-success"><%= expressFlash %></span>
+			</section>
+			<% } %> 
+			<% if(error.length > 0 ) { %>
+			<section class="alert alert-danger" style="margin-top:-50px; width:500px;">
+			 <span area-hidden="true"><i class="fa fa-exclamation-triangle"></i></span>
+			<span class="list-group-item-danger"> <%=error%></span><br>
+			</section>
+			<% } %>
+             
+                <div class="content">
+                  <h1><strong>ZGRAPHY<i style="margin-left:5px;" class="fa fa-print"></i></strong> </h1>
+                  <h2>New way to get things in your hand.</h2>
+                  <p>With the most innovative technology right in your home, you can unlock the creativity within your whole family. Easy to use straight out of the box, you’re ready to start building anything you need, anything you want, or anything the world has been waiting for.
+					<br> Either <a  class="btn btn-sm btn-success" href="#login">login</a> or <a href="#register" class="btn btn-sm	 btn-warning">register</a> </p>
+                  <span class="" style="color: white;" id="download-app1">
+                    <a href="/uploadRequirement" class="btn btn-default btn-lg "><i class="fa fa-cloud-download"></i>Upload Custom Product</a>
+                    <a href="/productGallery" class="btn btn-primary btn-lg "><i class="fa fa-cloud-download"></i>Browse Product Gallery</a>
+                  </span> <!-- end .button -->
+                  
+                </div> <!-- end .content -->
+              </div> <!-- end .top > .container> .row> .col-md-7 -->
+
+              <div class="col-sm-5 col-md-5 view-animate-container"  id="mycontent" ng-controller="displayCtrl">
+               <div class="photo-slide" ng-view>
+               
+              </div> <!--deepak end .top > .container> .row> .col-md-5 -->
+
+            </div> <!-- end .top> .container> .row -->
+          </div> <!-- end .top> .container -->
+        </div> <!-- end .top -->
+      </div> <!-- end .bg-color -->
+      </div>
+    </header>
+    <!-- ====== End Header Section ====== -->
+    
+
+     <!-- ====== Features Section ====== -->
+    <section id="features">
+      <div class="features section-padding">
+        <div class="container">
+
+          <div class="header">
+            <h1>Amazing Features</h1>
+            <p>Using 3D technology takes what we learn in class to a whole new level. The children are more inspired to learn about it. Incorporating this type of technology into their learning allows them to make connections from what they are learning in class to the greater world around them.</p>
+            <div class="underline">
+              <i class="fa fa-briefcase"></i>
+            </div>
+          </div> <!-- end .container> .header -->
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="featured-item-img">
+                <img src="http://3dprintingindustry.com/wp-content/uploads/2014/03/NA35withSwingArmNew.jpg" alt="">
+              </div>
+            </div>
+            <div class="col-md-8 feature-list">
+              <div class="row">
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><i class="fa fa-desktop"></i></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>Trendy Design</h3>
+                      <p>Design, model and build in ways never before possible.</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (1st item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><i class="fa fa-send"></i></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>Accuracy</h3>
+                      <p>With a 40 micron minimum layer height, and an X, Y resolution of 20 microns, the designs are extremely accurate. </p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (2nd item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><i class="fa fa-gears"></i></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>Durability</h3>
+                      <p>We use 3D printers as a tool on a daily basis for our own production line. </p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (3rd item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><i class="fa fa-search"></i></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>Easily Customize</h3>
+                      <p>You can design something uniquely your own through endless personalization and customization opportunities</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (4th item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><i class="fa fa-file"></i></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>Faster printing</h3>
+                      <p>When you have more print heads, you can extrude more material at once, speeding up the time it takes to print an object.</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (5th item) -->
+
+                <div class="col-sm-6 col-md-6">
+                  <div class="featured-item">
+                    <div class="icon">
+                      <div class="icon-style"><i class="fa fa-mobile-phone"></i></div>
+                    </div> <!-- end icon -->
+                    <div class="meta-text">
+                      <h3>Excellent Support</h3>
+                      <p>Learn through invention with hands-on activities.Explore with your family and exchange ideas</p>
+                    </div> <!-- end .meta-text -->
+                  </div> <!-- end .featured-item -->
+                </div> <!-- end .feature-list> .row > .col-md-6 (6th item) -->
+
+              </div> <!-- end .feature-list> .row -->
+            </div> <!-- end .feature-list -->
+          </div> <!-- end .container> .row -->
+
+        </div> <!-- end .container -->
+      </div> <!-- end .features -->
+    </section>
+    <!-- ====== End Features Section ====== -->
+
+
+    <!-- ====== Screenshots Section ====== -->
+    <section id="screenshots">
+      <div class="screenshots section-padding dark-bg">
+        <div class="container">
+
+          <div class="header">
+            <h1>Products Gallery</h1>
+            <p>Something about products</p>
+          </div>
+
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <a href="http://webuddysoft.com/cslider/wp-content/themes/enfold/cloudslider/slider-images/ring3.png" data-rel="prettyPhoto"><img src="http://webuddysoft.com/cslider/wp-content/themes/enfold/cloudslider/slider-images/ring3.png" alt="item photo"></a>
+            </div> <!-- end item -->
+            <div class="item">
+              <a href="http://userimages05-akm.imvu.com/productdata/stickers_5405995ae986e55b23b4940fa895f1ca.png" data-rel="prettyPhoto"><img src="http://userimages05-akm.imvu.com/productdata/stickers_5405995ae986e55b23b4940fa895f1ca.png" alt="item photo"></a>
+            </div> <!-- end item -->
+            <div class="item">
+              <a href="http://media.popcultcha.com.au/media/catalog/product/m/i/microbatmanggs.png" data-rel="prettyPhoto"><img src="http://media.popcultcha.com.au/media/catalog/product/m/i/microbatmanggs.png" alt="item photo"></a>
+            </div> <!-- end item -->
+            <div class="item">
+              <a href="http://t02.deviantart.net/j_CshBlOjR3PPQkfvPv1_dxT6tM=/fit-in/300x900/filters:no_upscale():origin()/pre12/c4b5/th/pre/f/2015/173/a/9/this_comic_is_devouring_my_soul_by_cookie_waffle-d8y9nkr.png" data-rel="prettyPhoto"><img src="http://t02.deviantart.net/j_CshBlOjR3PPQkfvPv1_dxT6tM=/fit-in/300x900/filters:no_upscale():origin()/pre12/c4b5/th/pre/f/2015/173/a/9/this_comic_is_devouring_my_soul_by_cookie_waffle-d8y9nkr.png" alt="item photo"></a>
+            </div> <!-- end item -->
+            <div class="item">
+              <a href="http://www.animatedimages.org/data/media/689/animated-dream-catcher-image-0009.gif" data-rel="prettyPhoto"><img src="http://www.animatedimages.org/data/media/689/animated-dream-catcher-image-0009.gif" alt="item photo"></a>
+            </div> <!-- end item -->
+            <div class="item">
+              <a href="https://s-media-cache-ak0.pinimg.com/736x/2e/3d/19/2e3d190472e288b0e45e1b942f95edeb.jpg" data-rel="prettyPhoto"><img src="https://s-media-cache-ak0.pinimg.com/736x/2e/3d/19/2e3d190472e288b0e45e1b942f95edeb.jpg" alt="item photo"></a>
+            </div> <!-- end item -->
+          </div> <!-- end owl carousel -->
+
+        </div> <!-- .container -->
+      </div> <!-- end .screenshots -->  
+    </section>
+    <!-- ====== End Screenshots Section ====== -->
+
+
+    <!-- ====== Description Section ====== -->
+    <section id="description">
+      <div class="description">
+        <div class="description-one section-padding">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-5 col-md-6">
+                <div class="app-image">
+                  <img src="http://www.open-electronics.org/wp-content/uploads/2014/01/Afinia-patent.png" alt="" style="margin-top: -20px;">
+                </div>
+              </div>
+              <div class="col-sm-7 col-md-6">
+                <div class="content">
+                  <h2 >Instantly Turn Your Imagination Into Reality</h2><br> 
+                  <p>3D printing allows you to quickly turn your ideas into tangible objects.Transform a visual or mental image into three dimensional form that you can physically touch
+                  Print your ideas right at your desktop, in your home or classroom Watch your creation build within minutes
+                  <br>
+                  3D printing opens up a new world of creative possibility and self-expression. With 3D printing, you have the ability to design something uniquely your own through endless personalization and customization opportunities.
+
+Express yourself creatively - if you can dream it, you can make it
+Bring your ideas to life, from making creative objects to one-of-a-kind prototypes
+Personalize or customize just about anything you desire
+                  <br>
+                  </p>
+                  <div class="button" id="download-app2">
+                    <a href="#download" class="btn btn-default btn-lg custom-btn get-btn"><i class="fa fa-cloud-download"></i>Learn More</a>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- .container> .row -->
+          </div> <!-- .container -->
+        </div> <!-- end .description-one -->
+
+        
+
+      </div> <!-- end .description -->
+    </section>
+    <!-- ====== End Description Section ====== -->
+
+
+
+
+    <!-- ====== Team Section ====== -->
+    <section id="team">
+      <div class="team section-padding">
+        <div class="container">
+
+          <div class="header">
+            <h1>Who We Are</h1>
+            <p>Some Lines About us.</p>
+            <div class="underline"><i class="fa fa-users"></i></div>
+          </div> <!-- end .container> .header -->
+
+          <div class="row">Our purpose is simple: It’s giving you the
+					freedom to take journeys; to discover new experiences; to take
+					charge of your world. It’s the power to connect who you are today
+					with who you want to be tomorrow. In a changing world, we’re
+					changing faster. We are relentless in our pursuit of discovery and
+					innovation, creating technologies and providing services that
+					empower. Opening the door to a world of possibility.
+		</div> <!-- end .container> .row -->
+
+        </div> <!-- end .container -->
+      </div> <!-- end .team -->
+    </section>
+    <!-- ====== Team Section ====== -->
+
+
+
+
+
+  <% include ../public/template/contact.ejs %> 
+   
+	
+    <!-- ====== End Contact Section ====== -->
+
+
+    <!-- ====== Copyright Section ====== -->
+    <section class="copyright dark-bg">
+      <div class="container">
+        <p>&copy; 2016 <a href="#">Zgraphy.com</a>, All Rights Reserved</p>
+      </div> <!-- end .container -->
+    </section>
+    <!-- ====== End Copyright Section ====== -->
+
+
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="js/jquery.js"></script>
+    
+    <!-- Modernizr js -->
+    <script src="js/main/modernizr-latest.js"></script>
+
+    <!-- Bootstrap 3.2.0 js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+   
+    <!-- Owl Carousel plugin -->
+    <script src="js/main/owl.carousel.min.js"></script>
+
+    <!-- ScrollTo js -->
+    <script src="js/main/jquery.scrollto.min.js"></script>
+
+    <!-- LocalScroll js -->
+    <script src="js/main/jquery.localScroll.min.js"></script>
+
+    <!-- jQuery Parallax plugin -->
+    <script src="js/main/jquery.parallax-1.1.3.js"></script>
+
+    <!-- Skrollr js plugin -->
+    <script src="js/main/skrollr.min.js"></script>
+
+    <!-- jQuery One Page Nav Plugin -->
+    <script src="js/main/jquery.nav.js"></script>
+    
+    <!-- jQuery Pretty Photo Plugin -->
+    <script src="js/main/jquery.prettyPhoto.js"></script>
+
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+<script type="text/javascript" src="/js/angularControllers/home.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            "use strict";
+
+            jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({ social_tools: false });
+        });
+    </script>
+  </body>
+</html>

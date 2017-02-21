@@ -1,0 +1,62 @@
+<div  class="testboxUpload login-panel panel panel-primary"  ng-controller="uploadController">
+
+					<div class="panel-heading">
+						<h2 class="panel-title">Upload Product Details</h2>
+						
+					</div>
+    <!-- FORM -->
+    
+  <br>
+    <div class="row-md-3" style="margin-left: 15px;">
+    <span><Strong>FirstName: </Strong><small class="text-info">{{user.firstName}}</small></span><br>
+     <span><Strong>LastName: </Strong><small class="text-info">{{user.lastName}}</small></span><br>
+      <span><Strong>Email: </Strong><small class="text-info">{{user.email}}</small></span><br>
+       <span><Strong>Mobile: </Strong><small class="text-info">{{user.mobile}}</small></span><br>
+        <span><Strong>Address: </Strong><small class="text-info">{{user.address}}</small></span><br>
+    </div>
+    
+    <!-- pass in the variable if our form is valid or invalid -->
+  <div class="panel-body">
+    <form name="imageForm"  action="/uploadProductAndImage" method="post" enctype ="multipart/form-data">
+                <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+				<input type="hidden" name="firstName" value="{{user.firstName}}" />
+				<input type="hidden" name="lastName" value="{{user.lastName}}" />
+				<input type="hidden" name="email" value="{{user.email}}" />
+				<input type="hidden" name="mobile" value="{{user.mobile}}" />
+				<input type="hidden" name="address" value="{{user.address}}" />
+                 <div class="form-group">
+                    <div class="col-sm-12" style="margin-left:5px;">
+                        <input type="text" name="prodName" class="form-control" placeholder="Product Name" ng-model="prodName" required />
+                        <small ng-show="imageForm.prodName.$invalid && !imageForm.prodName.$pristine" class="text-danger">Product Name is required.</small>
+                        </div>
+                </div>
+                
+                
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                        <textarea id="textareaEdit" class="form-control" rows="3" ng-model="textareaDesciption" placeholder="Enter Detail Description" required></textarea><br>
+                    </div>
+               </div> 
+                
+                
+                <!-- FILE UPLOAD -->
+				<div class="form-group ">
+                    <div class="thumbnail col-sm-12">
+                    	<label>Upload Product Image</label><br><br>
+                        <input type="file" file-model="myFile"  name="productImage"/>
+                        </div>
+                </div>
+                
+               
+              
+                <!-- SUBMIT BUTTON -->
+                <br>
+                <center>
+		<a href="#prev" class="btn btn-warning btn-lg">
+        <i  class="fa fa-arrow-circle-left"></i>&nbsp;Edit Details</a>
+       
+       <button type="submit" class="btn btn-primary btn-lg" ng-disabled="imageForm.$invalid">
+       SUBMIT</button>     
+      
+       </form>
+</div>

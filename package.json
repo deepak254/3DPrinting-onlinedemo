@@ -1,0 +1,19 @@
+{
+  "name": "3DPrinting-onlinedemo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+	 
+    "start": "node app.js"
+  },
+  "dependencies": {
+	  "express": "4.0.0",
+	  "email-templates": "0.0.5",
+	  "nodemailer": "0.3.x",
+    "ejs": "*"
+  },
+  "subdomain": "3DPrinting-onlinedemo",
+  "engines": {
+    "node": "0.10.x"
+  }
+}

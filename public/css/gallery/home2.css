@@ -1,0 +1,560 @@
+﻿.dialog-content
+{
+  display:none
+}
+.dialog-content-container .dialog-content
+{
+  display:inherit;
+  *display:block
+}
+.dialog-background
+{
+  position:absolute;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:10000;
+  display:none
+}
+.dialog-background.dialog-veil
+{
+  background-color:black;
+  filter:alpha(opacity=25);
+  -webkit-opacity:.25;
+  -moz-opacity:.25;
+  opacity:.25
+}
+.dialog-background.dialog-veil-opaque
+{
+  background-color:#4f514f
+}
+.dialog-background .dialog-loading-indicator
+{
+  position:absolute;
+  margin:auto;
+  top:50%;
+  margin-top:-25px;
+  height:50px;
+  width:100%;
+  text-align:center;
+  z-index:10001
+}
+.dialog-background .dialog-loading-indicator span
+{
+  display:inline-block
+}
+.dialog-container
+{
+  z-index:10002;
+  position:absolute;
+  top:-700px
+}
+.dialog-container.smallscreen
+{
+  width:95%;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  box-sizing:border-box
+}
+.dialog-container .dialog-header
+{
+  *zoom:1;
+  padding:3px;
+  height:40px
+}
+.dialog-container .dialog-header:before,
+.dialog-container .dialog-header:after
+{
+  content:".";
+  display:block;
+  height:0;
+  overflow:hidden
+}
+.dialog-container .dialog-header:after
+{
+  clear:both
+}
+.dialog-container .dialog-header h1
+{
+  float:left;
+  margin-left:10px;
+  margin-top:13px
+}
+.dialog-container .dialog-header .dialog-close-button
+{
+  float:right;
+  display:block
+}
+.dialog-container .dialog-header.draggable
+{
+  cursor:move
+}
+.dialog-container .dialog-content-container
+{
+  position:relative
+}
+.dialog-container .dialog-content-container iframe
+{
+  background-color:transparent;
+  z-index:1
+}
+.dialog-container .dialog-content-container .dialog-content-overlay
+{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:2
+}
+.dialog-background .dialog-loading-indicator span
+{
+  background-image:url(http://www.vphosted.com/sf/_hc-00000cb5/_langid-36/_/vp/images/B11/common/spinners/spinning-clock.gif);
+  width:49px;
+  height:50px
+}
+.dialog-default-padding
+{
+  padding:10px 10px 0 10px
+}
+.dialog-auto-scroll
+{
+  overflow-x:auto;
+  max-height:450px
+}
+.dialog-skin-primary.dialog-container,
+.dialog-skin-neutral.dialog-container
+{
+  border-top-right-radius:2px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  border-top-left-radius:0;
+  border-radius:2px;
+  background-clip:padding-box
+}
+.dialog-skin-primary.dialog-container .dialog-header,
+.dialog-skin-neutral.dialog-container .dialog-header
+{
+  border-top-right-radius:2px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  border-top-left-radius:2px;
+  background-clip:padding-box;
+  background:#202b34;
+  background:-webkit-linear-gradient(top,#202b34,#111a22);
+  background:linear-gradient(to bottom,#202b34,#111a22);
+  position:relative;
+  height:auto;
+  min-height:40px;
+  text-align:left
+}
+.dialog-skin-primary.dialog-container .dialog-header h1,
+.dialog-skin-neutral.dialog-container .dialog-header h1
+{
+  float:none;
+  margin-right:34px;
+  font-size:16px;
+  color:white
+}
+.dialog-skin-primary.dialog-container .dialog-header .dialog-close-button,
+.dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button
+{
+  margin-top:6px;
+  margin-right:5px;
+  color:transparent;
+  text-decoration:none;
+  border-top-right-radius:12px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  border-top-left-radius:0;
+  border-radius:12px;
+  background-clip:padding-box;
+  height:24px;
+  width:24px;
+  background-color:#fff;
+  position:relative
+}
+.dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:hover,
+.dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:hover
+{
+  background:#fff
+}
+.dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon,
+.dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon
+{
+  filter:alpha(opacity=70);
+  opacity:.7;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41a2&ie6=0');
+  filter:alpha(opacity=100);
+  zoom:1;
+  opacity:1;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41df&ie6=0');
+  background-size:196px 14px
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon,
+  .dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b40fc&ie6=0')
+  }
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon,
+  .dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b4081&ie6=0')
+  }
+}
+.dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:active,
+.dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:active
+{
+  background:#f0f2f3;
+  box-shadow:inset 0 2px 0 rgba(0,0,0,0.25);
+  box-shadow:inset 0 2px 0 .25 rgba(0,0,0,0.4)
+}
+.dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon,
+.dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon
+{
+  filter:alpha(opacity=70);
+  opacity:.7;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41a2&ie6=0');
+  filter:alpha(opacity=100);
+  zoom:1;
+  opacity:1;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41df&ie6=0');
+  background-size:196px 14px
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon,
+  .dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b40fc&ie6=0')
+  }
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-primary.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon,
+  .dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b4081&ie6=0')
+  }
+}
+.dialog-skin-primary.dialog-container .dialog-header .dialog-close-button-icon,
+.dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button-icon
+{
+  display:inline-block;
+  height:14px;
+  width:14px;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41a2&ie6=0');
+  background-size:196px 14px;
+  background-position:-55px 50%;
+  position:absolute;
+  top:5px;
+  left:4px
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-primary.dialog-container .dialog-header .dialog-close-button-icon,
+  .dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b40fc&ie6=0')
+  }
+}
+.dialog-skin-primary.dialog-container .dialog-header .dialog-close-button,
+.dialog-skin-neutral.dialog-container .dialog-header .dialog-close-button
+{
+  float:none;
+  position:absolute;
+  top:6px;
+  right:5px;
+  margin-top:0;
+  margin-right:0
+}
+.dialog-skin-primary.dialog-container .dialog-content-container,
+.dialog-skin-neutral.dialog-container .dialog-content-container
+{
+  background-color:#fff;
+  border-top-right-radius:0;
+  border-bottom-right-radius:2px;
+  border-bottom-left-radius:2px;
+  border-top-left-radius:0;
+  background-clip:padding-box;
+  padding-bottom:8px
+}
+.dialog-skin-primary.dialog-container.dialog-visible,
+.dialog-skin-neutral.dialog-container.dialog-visible
+{
+  box-shadow:4px 4px 4px rgba(0,0,0,0.4);
+  box-shadow:4px 4px 4px 1px rgba(0,0,0,0.4)
+}
+.dialog-skin-neutral.dialog-container .dialog-header
+{
+  background:#62798b;
+  background:-webkit-linear-gradient(top,#62798b,#38454f);
+  background:linear-gradient(to bottom,#62798b,#38454f)
+}
+.dialog-skin-neutral.dialog-container .dialog-content-container
+{
+  background-color:#fff
+}
+.dialog-skin-lightbox.dialog-background.dialog-veil
+{
+  background-color:rgba(0,0,0,0.6)
+}
+.dialog-skin-lightbox.dialog-background.dialog-veil-opaque
+{
+  display:none;
+  background-color:#111a22
+}
+.dialog-skin-lightbox.dialog-container.smallscreen
+{
+  position:fixed;
+  top:0!important;
+  left:0!important;
+  width:100%!important;
+  height:100%!important;
+  margin:0
+}
+.dialog-skin-lightbox.dialog-container .dialog-header
+{
+  background-color:#111a22
+}
+.dialog-skin-lightbox.dialog-container .dialog-header h1
+{
+  font-size:16px;
+  color:white
+}
+.dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button
+{
+  margin-top:6px;
+  margin-right:5px;
+  color:transparent;
+  text-decoration:none;
+  border-top-right-radius:12px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  border-top-left-radius:0;
+  border-radius:12px;
+  background-clip:padding-box;
+  height:24px;
+  width:24px;
+  background-color:#fff;
+  position:relative
+}
+.dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:hover
+{
+  background:#fff
+}
+.dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon
+{
+  filter:alpha(opacity=70);
+  opacity:.7;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41a2&ie6=0');
+  filter:alpha(opacity=100);
+  zoom:1;
+  opacity:1;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41df&ie6=0');
+  background-size:196px 14px
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b40fc&ie6=0')
+  }
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:hover .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b4081&ie6=0')
+  }
+}
+.dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:active
+{
+  background:#f0f2f3;
+  box-shadow:inset 0 2px 0 rgba(0,0,0,0.25);
+  box-shadow:inset 0 2px 0 .25 rgba(0,0,0,0.4)
+}
+.dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon
+{
+  filter:alpha(opacity=70);
+  opacity:.7;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41a2&ie6=0');
+  filter:alpha(opacity=100);
+  zoom:1;
+  opacity:1;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41df&ie6=0');
+  background-size:196px 14px
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b40fc&ie6=0')
+  }
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button:active .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-accent-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b4081&ie6=0')
+  }
+}
+.dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button-icon
+{
+  display:inline-block;
+  height:14px;
+  width:14px;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b41a2&ie6=0');
+  background-size:196px 14px;
+  background-position:-55px 50%;
+  position:absolute;
+  top:5px;
+  left:4px
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-lightbox.dialog-container .dialog-header .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-black-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b40fc&ie6=0')
+  }
+}
+.dialog-skin-lightbox.dialog-container .dialog-content-container
+{
+  background-color:#111a22;
+  color:#fff
+}
+.dialog-skin-lightbox.dialog-container .dialog-content-container a:hover
+{
+  color:inherit
+}
+.dialog-skin-lightbox .dialog-content
+{
+  margin:0;
+  padding:0 13px;
+  min-height:100px
+}
+.dialog-skin-media
+{
+  border-top-right-radius:2px;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  border-top-left-radius:0;
+  border-radius:2px;
+  background-clip:padding-box;
+  box-shadow:0 2px 2px 2px rgba(0,0,0,0.2)
+}
+.dialog-skin-media.dialog-container
+{
+  background:#fff
+}
+.ie6to8 .dialog-skin-media
+{
+  border:1px solid #b5babf
+}
+.dialog-skin-media .dialog-header
+{
+  height:1px;
+  padding:0;
+  position:relative;
+  z-index:2
+}
+.dialog-skin-media .dialog-header h1
+{
+  display:none
+}
+.dialog-skin-media .dialog-close-button
+{
+  display:block;
+  position:absolute;
+  top:-12px;
+  right:-12px;
+  width:24px;
+  height:24px;
+  background:#111a22;
+  border:3px solid #fff;
+  border-top-right-radius:50%;
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+  border-top-left-radius:0;
+  border-radius:50%;
+  background-clip:padding-box;
+  box-shadow:2px 1px 1px rgba(0,0,0,0.2);
+  box-shadow:2px 1px 1px .2 rgba(0,0,0,0.4)
+}
+.dialog-skin-media .dialog-close-button-icon
+{
+  display:block;
+  height:14px;
+  width:14px;
+  background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-white-2x.png&w=196&h=14&langid=36&q=0&c=64&hc=004b4797&ie6=0');
+  background-size:196px 14px;
+  background-position:-55px 50%;
+  position:relative;
+  top:5px;
+  left:4px
+}
+@media (-webkit-min-device-pixel-ratio:2),(min-resolution:2dppx),(min-resolution:192dpi)
+{
+  .dialog-skin-media .dialog-close-button-icon
+  {
+    background-image:url('http://www.vphosted.com/Sales/Utility/Img.caspx?s=%2fvp%2fcss%2fpkg%2fvp.uilibrary%2fimages%2ficons-white-2x.png&w=392&h=28&langid=36&q=0&c=64&hc=004b46c9&ie6=0')
+  }
+}
+.dialog-skin-media .dialog-content-container
+{
+  padding:20px;
+  z-index:1
+}
+.dialog-skin-primary.dialog-visible.dialog-container,
+.dialog-skin-neutral.dialog-visible.dialog-container
+{
+  background-color:#fff\9;
+  border:1px #555 solid\9
+}
+
+.hc--347385929 {}.dialog-content
+{
+  margin:0 10px;
+  padding-top:10px
+}
+.dialog-button-group
+{
+  position:relative;
+  width:100%;
+  margin-top:10px;
+  padding-top:10px;
+  padding-bottom:2px;
+  text-align:center
+}
+.dialog-button-group .textbutton
+{
+  min-width:100px;
+  margin-left:7px;
+  margin-right:7px
+}
+.ui-mobile .dialog-button-group .textbutton,
+.site-mobile .dialog-button-group .textbutton
+{
+  margin-left:0;
+  margin-right:0
+}
+.smallscreen .dialog-button-group.wide-on-mobile .textbutton
+{
+  width:100%;
+  padding-left:0;
+  padding-right:0;
+  margin:0;
+  margin-bottom:10px
+}
+.smallscreen .dialog-button-group.wide-on-mobile .textbutton:last-child
+{
+  margin-bottom:0
+}

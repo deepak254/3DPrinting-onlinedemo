@@ -1,0 +1,40 @@
+<div  class="testbox login-panel panel panel-primary">
+
+					<div class="panel-heading">
+						<h2 class="panel-title">Please LogIn</h2>
+					</div>
+    <!-- FORM -->
+    <!-- pass in the variable if our form is valid or invalid -->
+  <div class="panel-body">
+   	<form role="form" name="loginForm" action="/doLogin" method="get">
+
+        <!-- NAME -->
+        <div class="form-group">
+          	 <label id="icon" for="username"><i class="icon-user"></i></label>
+            <input type="text" name="username"  ng-model="username"  placeholder="Enter Mobile/Email" required>
+            <small ng-show="loginForm.username.$invalid && !loginForm.username.$pristine" class="text-danger">Mobile/email is required.</small>
+        </div>
+
+        <!-- USERNAME -->
+        <div class="form-group">
+            <label id="icon" for="name"><i class="icon-unlock-alt "></i></label>
+            <input type="password" name="password"  ng-model="password" placeholder="Enter Password"  required>
+            <small ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="text-danger">Password is required.</small>
+        </div>
+        
+        <div class="checkbox">
+									<label> <input name="remember" type="checkbox"
+										value="Remember Me">Remember Me
+									</label>
+								</div>
+				<!-- Change this to a button or input when using this as a form -->
+				<button class="btn btn-lg btn-success btn-block" type="submit" ng-disabled="loginForm.$invalid">Login  <i style="margin-left: 2px;" class="icon-unlock"></i></button>
+
+		
+		</form>
+		<hr> <a class="btn btn-lg btn-primary btn-block"
+			href="/auth/facebook" type="submit"><i class="fa fa-facebook" style="margin-right: 10px;"></i>Login With Facebook</a> <a
+			class="btn btn-lg btn-danger btn-block" href="/auth/google"
+			type="submit"><i class="fa fa-google-plus" style="margin-right: 10px;"></i>Login With Google</a>
+	</div>
+</div>

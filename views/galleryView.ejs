@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <!-- Template Title -->
+    <title>3D App</title>
+	
+	
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+
+    <!-- Bootstrap 3.2.0 stylesheet -->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icon stylesheet -->
+    <link href="css/main/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel stylesheet -->
+    <link href="css/main/owl.carousel.css" rel="stylesheet">
+    
+    <!-- Pretty Photo stylesheet -->
+    <link href="css/main/prettyPhoto.css" rel="stylesheet">
+
+    <!-- Custom stylesheet -->
+    <link href="css/main/style.css" rel="stylesheet">
+     <link href="css/stylesheet.css" rel="stylesheet">
+    
+    <link href="css/main/white.css" rel="stylesheet">
+
+	<link href="css/footer/footer-distributed-with-address-and-phones.css" rel="stylesheet">
+    <!-- Custom Responsive stylesheet -->
+    <link href="css/main/responsive.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-animate.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+ <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+ <link rel='stylesheet' href="css/loading-bar/loading-bar.min.css" type='text/css' media='all' />
+ <script type='text/javascript' src="js/loading-bar.min.js"></script>
+ <!-- <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+ <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script> -->
+</head>
+
+<body>
+<% include ./resources/headerAndMenu %>
+<div class="container-fluid">
+
+<br>
+	<div class="container-fluid">
+		<div class="row" ng-app="galleryApp" ng-controller="productController">
+		
+		    <div ng-repeat="product in angularProducts">
+			    <div class="col-md-4">
+			    
+					<div class="list-group">
+						 {{product.productName}}
+						<div class="list-group-item">
+							{{product.productColor}}
+						</div>
+						<div class="list-group-item">
+						
+							<img src="https://s3.amazonaws.com/products3d/ownProducts/{{product.productImage[0]}}">
+							<h4 class="list-group-item-heading">
+							<b>Price:</b>
+							</h4>
+							<p class="list-group-item-text">
+							 {{product.productPrice}}
+							</p>
+						</div>
+						<div class="list-group-item">
+							<span class="badge">{{product.Quantity}}</span>Qty
+						</div> 
+					</div>
+			
+					
+			    </div>
+		    </div>
+		</div>
+	</div>
+
+</div>
+<% include ./resources/footer %> 
+
+<script>
+angular.module('galleryApp', []).controller('productController', function($scope) {
+$scope.angularProducts=<%-JSON.stringify(products)%>;
+});
+</script>
+
+</body>
+</html>
