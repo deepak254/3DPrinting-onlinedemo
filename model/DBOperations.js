@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/3ddb');
-//var db = mongoose.connect('mongodb://deepak:Girish123@ds011870.mlab.com:11870/3ddb');
+//var db = mongoose.connect('mongodb://localhost/3ddb');
+var db = mongoose.connect('mongodb://deepak:Girish123@ds011870.mlab.com:11870/3ddb');
 
 var dateFormat = require('dateformat');
 var connection=mongoose.connection;
