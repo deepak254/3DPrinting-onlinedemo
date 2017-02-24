@@ -100,7 +100,7 @@
 				$or : [ {
 					userEmailId : username
 				}, {
-					userEmailId : username
+					userMobileNumber : username
 				} ],
 				userPassword : password
 			}, function(err, users) {
@@ -261,7 +261,8 @@
 		res.redirect('/');
 	});
 	
-	router.get('/home',middleWareService.setAdmin,middleWareService.checkReqAdmin, function(req, res) {
+	//router.get('/home',middleWareService.setAdmin,middleWareService.checkReqAdmin, function(req, res) {
+	router.get('/home', function(req, res) {
 		console.log(req.user);
 		console.log(req.admin);
 			res.render('default',{
